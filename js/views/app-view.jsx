@@ -128,6 +128,7 @@ var app = app || {};
       });
     }
   });
+
   
   var AppComponent = React.createClass({
     render: function () {
@@ -145,6 +146,10 @@ var app = app || {};
         </div>
       );
     }
-  });  
+  });
+                           
+  $(function () {
+    React.renderComponent(<AppComponent/>, document.getElementById("todoapp"));
+  });                           
   
 })(jQuery);
