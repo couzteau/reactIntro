@@ -1,0 +1,1819 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>StepByStep</title></head><body><article class="markdown-body"><h2 id="add-our-additional-script-tags"><a name="user-content-add-our-additional-script-tags" href="#add-our-additional-script-tags" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Add our additional script tags</h2>
+<p>At the top of the set of script tags that appear at the bottom of the body:</p>
+<pre><code class="html">    &lt;script src=&quot;bower_components/react/react-with-addons.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;bower_components/react/JSXTransformer.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>These add the main React library and the code that converts JSX files into pure JavaScript.</p>
+<h2 id="load-the-views-as-jsx"><a name="user-content-load-the-views-as-jsx" href="#load-the-views-as-jsx" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Load the views as JSX</h2>
+<p>Rename <code>js/views/app-view.js</code> to <code>app-view.jsx</code> and <code>js/views/todo-view.js</code> to <code>todo-view.jsx</code>. In the <code>index.html</code> file, modify the script tags for everything starting with <code>todo-view.js</code> to be loaded by the JSX transformer:</p>
+<pre><code class="html">        &lt;script type=&quot;text/jsx&quot; src=&quot;js/views/todo-view.jsx&quot;&gt;&lt;/script&gt;
+        &lt;script type=&quot;text/jsx&quot; src=&quot;js/views/app-view.jsx&quot;&gt;&lt;/script&gt;
+        &lt;script type=&quot;text/jsx&quot; src=&quot;js/routers/router.js&quot;&gt;&lt;/script&gt;
+        &lt;script type=&quot;text/jsx&quot; src=&quot;js/app.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>We do this to ensure that the loading order is what we need, even though the last two files there aren&rsquo;t JSX files.</p>
+<h2 id="turn-the-todoapp-into-a-react-component"><a name="user-content-turn-the-todoapp-into-a-react-component" href="#turn-the-todoapp-into-a-react-component" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Turn the todoapp into a React component</h2>
+<p>Next, we&rsquo;ll turn the contents of the <code>todoapp</code> <code>&lt;section&gt;</code> of the HTML file into a React component. Cut that code (leaving the <code>&lt;section&gt;</code> empty in the HTML file) and add this to <code>app-view.jsx</code>:</p>
+<pre><code class="javascript">  var AppComponent = React.createClass({
+    render: function () {
+      return (&lt;div&gt;
+        &lt;header id=&quot;header&quot;&gt;
+          &lt;h1&gt;todos&lt;/h1&gt;
+          &lt;input id=&quot;new-todo&quot; placeholder=&quot;What needs to be done?&quot; autofocus /&gt;
+        &lt;/header&gt;
+        &lt;section id=&quot;main&quot;&gt;
+          &lt;input id=&quot;toggle-all&quot; type=&quot;checkbox&quot; /&gt;
+          &lt;label htmlFor=&quot;toggle-all&quot;&gt;Mark all as complete&lt;/label&gt;
+          &lt;ul id=&quot;todo-list&quot;&gt;&lt;/ul&gt;
+        &lt;/section&gt;
+        &lt;footer id=&quot;footer&quot;&gt;&lt;/footer&gt;
+        &lt;/div&gt;
+      );
+    }
+  });
+</code></pre>
+
+<p>In the process here, we made a couple of changes:</p>
+<ol>
+<li>We wrapped the contents in a <code>&lt;div&gt;</code>. React requires us to return a single component to render.</li>
+<li>We closed the two <code>&lt;input&gt;</code> tags in the XML style with a trailing <code>/&gt;</code>. JSX requires this.</li>
+<li>We had to change the <code>for</code> attribute of the <code>&lt;label&gt;</code> tag to <code>htmlFor</code> because <code>for</code> is a JavaScript keyword. This is a slightly leaky abstraction, but it&rsquo;s not too big a deal. The <code>class</code> attribute is similarly listed as <code>className</code> in JSX.</li>
+</ol>
+<p>Next, we need to tell React to render our new component by adding the following block just beneath our <code>appComponent</code>.</p>
+<pre><code class="javascript">  $(function () {
+    React.renderComponent(&lt;AppComponent/&gt;, document.getElementById(&quot;todoapp&quot;));
+  });
+</code></pre>
+
+<p>When you reload the page, you&rsquo;ll see that it looks just as it did before.</p>
+<h2 id="aside-mixing-html-and-js"><a name="user-content-aside-mixing-html-and-js" href="#aside-mixing-html-and-js" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Aside: Mixing HTML and JS</h2>
+<p>When React was first introduced, the mixing of JavaScript and markup bothered many people. The message from the React team is this: your markup is already strongly coupled with the view code that manages it. You need look no farther than the <code>initialize</code> method of <code>AppView</code> to see that this is true.</p>
+<pre><code class="javascript">        initialize: function () {
+            this.allCheckbox = this.$('#toggle-all')[0];
+            this.$input = this.$('#new-todo');
+            this.$footer = this.$('#footer');
+            this.$main = this.$('#main');
+            this.$list = $('#todo-list');
+</code></pre>
+
+<p>React&rsquo;s style reduces the number of places you need to look in order to figure out what&rsquo;s going on, and that&rsquo;s an important part of the reason React exists.</p>
+<p>Keeping your view separate from the rest of your app makes sense, but keeping your view code separate from your template is not necessary.</p>
+<h2 id="the-statscomponent"><a name="user-content-the-statscomponent" href="#the-statscomponent" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The StatsComponent</h2>
+<p>Copy the stats template from the HTML file into <code>app-view.jsx</code> as part of a new <code>StatsComponent</code> <em>above</em> the <code>AppComponent</code>:</p>
+<pre><code class="javascript">  var StatsComponent = React.createClass({
+    render: function () {
+      return (&lt;div&gt;
+        &lt;span id=&quot;todo-count&quot;&gt;&lt;strong&gt;&lt;%= remaining %&gt;&lt;/strong&gt; &lt;%= remaining === 1 ? 'item' : 'items' %&gt; left&lt;/span&gt;
+        &lt;ul id=&quot;filters&quot;&gt;
+          &lt;li&gt;
+          &lt;a className=&quot;selected&quot; href=&quot;#/&quot;&gt;All&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;a href=&quot;#/active&quot;&gt;Active&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;a href=&quot;#/completed&quot;&gt;Completed&lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;% if (completed) { %&gt;
+        &lt;button id=&quot;clear-completed&quot;&gt;Clear completed (&lt;%= completed %&gt;)&lt;/button&gt;
+        &lt;% } %&gt;
+      &lt;/div&gt;);
+    }
+  });
+</code></pre>
+
+<p>Note that we wrapped it in a <code>&lt;div&gt;</code> as we had for the main app view. We also changed the <code>&lt;a&gt;</code> tag&rsquo;s <code>class</code> attribute to <code>className</code> because that&rsquo;s what JSX expects in order to not conflict with JavaScript&rsquo;s <code>class</code> keyword.</p>
+<p>Of course, what we&rsquo;re left with is not valid React JSX code because there&rsquo;s Underscore template cruft in there. If we have access to the todos, we&rsquo;d be able to get all of the values we need in order to fill in the stats. Let&rsquo;s make it so that the todos will be passed in as a prop.</p>
+<p>We can see the definitions of <code>completed</code> and <code>remaining</code> in <code>AppView.render</code>:</p>
+<pre><code class="javascript">            var completed = app.todos.completed().length;
+            var remaining = app.todos.remaining().length;
+</code></pre>
+
+<p>Let&rsquo;s move that into <code>StatsComponent.render</code> and then use our new variables:</p>
+<pre><code class="javascript">    render: function () {
+      var completed = this.props.todos.completed().length,
+          remaining = this.props.todos.remaining().length,
+          itemLabel = remaining === 1 ? 'item' : 'items';
+
+      return (&lt;div&gt;
+          &lt;span id=&quot;todo-count&quot;&gt;&lt;strong&gt;{remaining}&lt;/strong&gt; {itemLabel} left&lt;/span&gt;
+          &lt;ul id=&quot;filters&quot;&gt;
+            &lt;li&gt;
+            &lt;a className=&quot;selected&quot; href=&quot;#/&quot;&gt;All&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#/active&quot;&gt;Active&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#/completed&quot;&gt;Completed&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;% if (completed) { %&gt;
+          &lt;button id=&quot;clear-completed&quot;&gt;Clear completed (&lt;%= completed %&gt;)&lt;/button&gt;
+          &lt;% } %&gt;
+        &lt;/div&gt;);
+    }
+</code></pre>
+
+<p>What about that button that is either going to be there or not depending on whether or not there are completed items? Except for the convenience <code>{}</code> for inserting variables, JSX doesn&rsquo;t have template language features. It&rsquo;s just JavaScript. So, let&rsquo;s just do a JavaScripty thing:</p>
+<pre><code class="javascript">    render: function () {
+      var completed = this.props.todos.completed().length,
+          remaining = this.props.todos.remaining().length,
+          itemLabel = remaining === 1 ? 'item' : 'items',
+          clearButton = !completed ? null : (&lt;button id=&quot;clear-completed&quot;&gt;Clear completed ({completed})&lt;/button&gt;);
+
+      return (&lt;div&gt;
+          &lt;span id=&quot;todo-count&quot;&gt;&lt;strong&gt;{remaining}&lt;/strong&gt; {itemLabel} left&lt;/span&gt;
+          &lt;ul id=&quot;filters&quot;&gt;
+            &lt;li&gt;
+            &lt;a className=&quot;selected&quot; href=&quot;#/&quot;&gt;All&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#/active&quot;&gt;Active&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#/completed&quot;&gt;Completed&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+          {clearButton}
+        &lt;/div&gt;);
+    }
+</code></pre>
+
+<p>React components can be assigned to variables. In this case, <code>clearButton</code> is either going to be <code>null</code> or a <code>&lt;button&gt;</code> component and then we incorporate that value into the returned output. When rendering the components, if React sees a <code>null</code>, it just drops it.</p>
+<h2 id="changing-rendering-to-wire-in-the-statscomponent"><a name="user-content-changing-rendering-to-wire-in-the-statscomponent" href="#changing-rendering-to-wire-in-the-statscomponent" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Changing rendering to wire in the <code>StatsComponent</code></h2>
+<p>Now, we want to wire in our <code>StatsComponent</code>. If you look in <code>AppView.render</code>, you&rsquo;ll see that the stats aren&rsquo;t displayed if there are no todos, so we&rsquo;ll do that as well. You can also see that <code>AppView.render</code> is managing the checkbox that reflects whether all of the todos are checked off. We&rsquo;ll move that logic into <code>AppComponent</code> as well.</p>
+<p>In the code below, we set the <code>stats</code> and <code>allComplete</code> variables and then we refer to <code>stats</code> in the <code>&lt;footer&gt;</code> and <code>allComplete</code> on the <code>#toggle-all</code> element.</p>
+<pre><code class="javascript">  var AppComponent = React.createClass({
+    render: function () {
+      var stats = !this.props.todos.length ? null : (&lt;StatsComponent todos={this.props.todos} /&gt;),
+          allComplete = this.props.todos.remaining().length === 0;
+
+      return (&lt;div&gt;
+        &lt;header id=&quot;header&quot;&gt;
+          &lt;h1&gt;todos&lt;/h1&gt;
+          &lt;input id=&quot;new-todo&quot; placeholder=&quot;What needs to be done?&quot; autofocus /&gt;
+        &lt;/header&gt;
+        &lt;section id=&quot;main&quot;&gt;
+          &lt;input id=&quot;toggle-all&quot; type=&quot;checkbox&quot; checked={allComplete} /&gt;
+          &lt;label htmlFor=&quot;toggle-all&quot;&gt;Mark all as complete&lt;/label&gt;
+          &lt;ul id=&quot;todo-list&quot;&gt;&lt;/ul&gt;
+        &lt;/section&gt;
+        &lt;footer id=&quot;footer&quot;&gt;{stats}&lt;/footer&gt;
+        &lt;/div&gt;
+      );
+    }
+  });
+</code></pre>
+
+<p>Next, we&rsquo;re going to get rid of our code that runs on document ready that calls <code>React.render</code>. Add the <code>React.render</code> call at the top of <code>AppView.initialize</code> and <code>AppView.render</code>:</p>
+<pre><code class="javascript">      React.render(&lt;AppComponent todos={app.todos} /&gt;, document.getElementById(&quot;todoapp&quot;));
+</code></pre>
+
+<p>As you can see, we&rsquo;re now passing in <code>app.todos</code> as a <code>todos</code> prop for <code>AppComponent</code>. Also, the reason we need to add this to <code>initialize</code> is so that the DOM nodes are there when the rest of the <code>initialize</code> code runs.</p>
+<p>One note about the state of things as we&rsquo;re moving through this refactoring: generally speaking, React should be in charge of everything under the DOM node into which you&rsquo;re rendering components. There is an escape hatch if you are including some old-style DOM code.</p>
+<p>That said, these step-by-step changes still work because of React&rsquo;s DOM diffing code. React will warn you on the browser&rsquo;s console if there are elements that it doesn&rsquo;t recognize when it tries to apply changes, but all of the changes we&rsquo;ve been making allow React to manage some nodes while Backbone/jQuery manage others.</p>
+<p>Since we&rsquo;ve started using <code>StatsComponent</code>, we can remove the rendering of that from <code>AppView.render</code> which gives us this:</p>
+<pre><code class="javascript">        render: function () {
+          React.render(&lt;AppComponent todos={app.todos} /&gt;, document.getElementById(&quot;todoapp&quot;));
+
+            if (app.todos.length) {
+                this.$main.show();
+
+                this.$('#filters li a')
+                    .removeClass('selected')
+                    .filter('[href=&quot;#/' + (app.TodoFilter || '') + '&quot;]')
+                    .addClass('selected');
+            } else {
+                this.$main.hide();
+            }
+        },
+</code></pre>
+
+<p>We can also remove the <code>statsTemplate</code> variable from <code>AppView</code> and remove the template block itself from <code>index.html</code>.</p>
+<h2 id="adding-new-todos"><a name="user-content-adding-new-todos" href="#adding-new-todos" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Adding new todos</h2>
+<p>You might have noticed that the text input for new todos no longer was receiving the focus. React uses camelCase style for its component properties, so we need to change the <code>&lt;input&gt;</code> for new todos to have an <code>autoFocus</code> attribute (note the capital &ldquo;F&rdquo;).</p>
+<p>To add a todo, <code>AppView</code> handles keypress events in the <code>events</code> property of the view:</p>
+<pre><code class="javascript">        events: {
+            'keypress #new-todo': 'createOnEnter',
+            'click #clear-completed': 'clearCompleted',
+            'click #toggle-all': 'toggleAllComplete'
+        },
+</code></pre>
+
+<p><code>createOnEnter</code> looks like this:</p>
+<pre><code class="javascript">        createOnEnter: function (e) {
+            if (e.which === ENTER_KEY &amp;&amp; this.$input.val().trim()) {
+                app.todos.create(this.newAttributes());
+                this.$input.val('');
+            }
+        },
+</code></pre>
+
+<p><code>createOnEnter</code> relies on a method called <code>newAttributes</code> which looks like this:</p>
+<pre><code class="javascript">        newAttributes: function () {
+            return {
+                title: this.$input.val().trim(),
+                order: app.todos.nextOrder(),
+                completed: false
+            };
+        },
+</code></pre>
+
+<p>I would argue that this actually belongs on the model, but I&rsquo;m focused on refactoring the view so we&rsquo;ll leave it in this file for now. It turns out that <code>newAttributes</code> is only called in <code>createOnEnter</code>, so we&rsquo;ll be able to just delete it and put the object it returns directly in our code that handles the keypress.</p>
+<p>We&rsquo;ll change the <code>&lt;input&gt;</code> component in the <code>AppComponent.render</code> method to handle the keypress event and to give us access to the DOM node. Here&rsquo;s what it looks like:</p>
+<pre><code class="html">          &lt;input id=&quot;new-todo&quot; placeholder=&quot;What needs to be done?&quot; autoFocus onKeyPress={this.handleKeyPress} ref=&quot;newTodo&quot; /&gt;
+</code></pre>
+
+<p>Adding the keypress handler is simple: we just set an <code>onKeyPress</code> prop to <code>this.handleKeyPress</code>. React automatically binds React component methods, so passing in <code>this.handleKeyPress</code> will ensure that the method gets a proper <code>this</code> value when it&rsquo;s called.</p>
+<p>The <code>ref</code> prop is special. It gives us access to the actual DOM node. Let&rsquo;s create the <code>AppComponent.handleKeyPress</code> method to see how it&rsquo;s used:</p>
+<pre><code class="javascript">    handleKeyPress: function (e) {
+      var input = this.refs.newTodo.getDOMNode(),
+          text = input.value.trim();
+
+      if (e.which === ENTER_KEY &amp;&amp; text) {
+        this.props.todos.create({
+          title: text,
+          order: this.props.todos.nextOrder(),
+          completed: false
+        });
+        input.value = &quot;&quot;;
+      }
+    },
+</code></pre>
+
+<p>Having set a ref called <code>newTodo</code>, we can get at the input DOM node itself by using <code>this.refs.newTodo.getDOMNode()</code>. Other than that, this code looks like pretty typical web event handling code.</p>
+<p>With those changes to <code>AppComponent</code> in place, we can now delete:</p>
+<ol>
+<li><code>keypress #new-todo</code> from the <code>AppView.events</code> object</li>
+<li>The line that sets <code>this.$input</code> in <code>AppView.initialize</code></li>
+<li><code>AppView.newAttributes</code></li>
+<li><code>AppView.createOnEnter</code></li>
+</ol>
+<p>You can reload the page and see that you can still create new todos.</p>
+<h2 id="creating-an-initial-itemcomponent"><a name="user-content-creating-an-initial-itemcomponent" href="#creating-an-initial-itemcomponent" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Creating an initial ItemComponent</h2>
+<p>Start by copying the item template into a new React component called <code>ItemComponent</code> in <code>todo-view.jsx</code>. We&rsquo;ll change the <code>class</code> attributes to <code>className</code> and fix up the <code>&lt;input&gt;</code> tags to be closed properly. We also wrap the whole template in <code>&lt;li&gt;</code> tags because that&rsquo;s what Backbone would do with the template contents.</p>
+<p>After those quick, mechanical sorts of changes, we end up with this:</p>
+<pre><code class="javascript">  app.ItemComponent = React.createComponent({
+    render: function () {
+      return (&lt;li&gt;
+        &lt;div className=&quot;view&quot;&gt;
+          &lt;input className=&quot;toggle&quot; type=&quot;checkbox&quot; &lt;%= completed ? 'checked' : '' %&gt; /&gt;
+          &lt;label&gt;&lt;%- title %&gt;&lt;/label&gt;
+          &lt;button className=&quot;destroy&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;input className=&quot;edit&quot; value=&quot;&lt;%- title %&gt;&quot; /&gt;
+      &lt;/li&gt;);
+    }
+  });
+</code></pre>
+
+<p>Let&rsquo;s just assume that <code>todo</code> will be a prop for our new component:</p>
+<pre><code class="javascript">  app.ItemComponent = React.createClass({
+    render: function () {
+      var todo = this.props.todo;
+
+      return (&lt;li&gt;
+        &lt;div className=&quot;view&quot;&gt;
+          &lt;input className=&quot;toggle&quot; type=&quot;checkbox&quot; checked={todo.get(&quot;completed&quot;)} /&gt;
+          &lt;label&gt;{todo.get(&quot;title&quot;)}&lt;/label&gt;
+          &lt;button className=&quot;destroy&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;input className=&quot;edit&quot; defaultValue={todo.get(&quot;title&quot;)} /&gt;
+      &lt;/li&gt;);
+    }
+  });
+</code></pre>
+
+<p>One other subtle change in the code above: on the <code>&lt;input&gt;</code> we change the <code>value</code> attribute to <code>defaultValue</code>, because we want the field to be editable by the user. We re-render all of the components frequently with React, so this is a recognition that the value we&rsquo;re providing is the default value and not necessarily the current value.</p>
+<p>React components are just normal JavaScript objects and can be passed around as such. By putting <code>ItemComponent</code> on <code>app</code>, we&rsquo;ll be able to access this component from <code>AppComponent</code>.</p>
+<p>Using this turns out to be amazingly simple. Just a couple of changes to the <code>AppComponent.render</code> function. When declaring the variables at the top of that method:</p>
+<pre><code class="javascript">          todoItems = this.props.todos.map(function (todo) {
+            return (&lt;app.ItemComponent todo={todo} key={todo.get(&quot;order&quot;)} /&gt;);
+          });
+</code></pre>
+
+<p>This uses the standard functional <code>map</code> idiom to create a list of <code>app.ItemComponent</code>s. As expected by the component, we pass in <code>title</code> and <code>completed</code> properties.</p>
+<p>The <code>key</code> property is something React uses to manage the list items. It needs to be unique in the list. React will use that to add, move and delete the item from the DOM if it needs to.</p>
+<p>Then, we have React put that list of items in the right place in the return value from <code>render</code>:</p>
+<pre><code class="html">          &lt;ul id=&quot;todo-list&quot;&gt;{todoItems}&lt;/ul&gt;
+</code></pre>
+
+<p>Next, we need to disconnect <code>AppView</code>&lsquo;s code which was managing that list:</p>
+<ol>
+<li>Remove the <code>this.$list</code> setting that happens in <code>AppView.initialize</code></li>
+<li>Delete the body of <code>addOne</code></li>
+<li>Delete the body of <code>addAll</code></li>
+</ol>
+<p>When you reload the page, you&rsquo;ll see your list of todos. You should also see that you can add new todos, even though we just deleted the code responsible for displaying new todos!</p>
+<p>This is the &ldquo;React way&rdquo; kicking in. We just generate the components that we want to appear on the screen and React handles the updates.</p>
+<h2 id="check-the-dev-tools-console"><a name="user-content-check-the-dev-tools-console" href="#check-the-dev-tools-console" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Check the Dev Tools Console</h2>
+<p>If you haven&rsquo;t already had your browser&rsquo;s developer tools console open, now would be a good time to do so.</p>
+<p>React provides <em>really awesome</em> error messages. Many times, if you don&rsquo;t use React in the &ldquo;right&rdquo; way, it will tell you in the console. For example, if we had forgotten the <code>key</code> prop when rendering <code>ItemComponent</code>s, React would have warned us about that. Right now, it&rsquo;s warning us about improperly configured read-only fields:</p>
+<pre><code>Warning: You provided a `checked` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultChecked`. Otherwise, set either `onChange` or `readOnly`. Check the render method of `AppComponent`.
+</code></pre>
+
+<p>React wants to be sure that we haven&rsquo;t forgotten to handle changes to our fields. Let&rsquo;s clean up the checkboxes. <code>ItemComponent</code> is rendering one of them. When it&rsquo;s clicked, it should toggle the todo&rsquo;s completion state. To do this, we move <code>toggleCompleted</code> from <code>TodoView</code> to <code>ItemComponent</code> and change it slightly to access the todo from <code>props</code>:</p>
+<pre><code class="javascript">    toggleCompleted: function () {
+        this.props.todo.toggle();
+    },
+</code></pre>
+
+<p>We also need to remove the reference to <code>toggleCompleted</code> from <code>TodoView</code>&lsquo;s <code>events</code>. Finally, we wire up the event by adding <code>onChange</code> to the checkbox:</p>
+<pre><code class="javascript">          &lt;input className=&quot;toggle&quot; type=&quot;checkbox&quot; onChange={this.toggleCompleted} checked={this.props.todo.get(&quot;completed&quot;)} /&gt;
+</code></pre>
+
+<p>Refresh your browser, and try toggling a todo. The checkmark properly reflects the completed state, but you may notice that the completed todos aren&rsquo;t getting checked off. We&rsquo;ll fix that in a minute.</p>
+<p>In the console, you&rsquo;ll still see a complaint about <code>checked</code> props because of the &ldquo;complete all&rdquo; checkbox in the <code>AppComponent</code>. Let&rsquo;s fix that one in the same way.</p>
+<p>We move <code>toggleAllComplete</code> into <code>AppComponent</code>. While it would still work if we refer to <code>app.todos</code>, it&rsquo;s much better to refer to <code>this.props.todos</code>, because that makes this a reusable component that is not dependent on a global variable. Having two of these todo lists on a single page would be easy. We&rsquo;ll also extract the <code>allComplete</code> definition from the <code>render</code> method into its own method:</p>
+<pre><code class="javascript">    allComplete: function () {
+      return this.props.todos.remaining().length === 0;
+    },
+
+    toggleAllComplete: function () {
+            var completed = !this.allComplete();
+
+            this.props.todos.each(function (todo) {
+                todo.save({
+                    completed: completed
+                });
+            });
+        },
+</code></pre>
+
+<p>Note how the original <code>toggleAllComplete</code> referred to the state in a checkbox rather than going back to the model, which is the real source of truth.</p>
+<p>We need to add the change handler to the render method:</p>
+<pre><code class="javascript">          &lt;input id=&quot;toggle-all&quot; type=&quot;checkbox&quot; onChange={this.toggleAllComplete} checked={allComplete} /&gt;
+</code></pre>
+
+<p>Now, we need to remove the references to <code>toggleAllComplete</code> from <code>AppView</code>. Get rid of the line from <code>AppView.events</code> and also the line in <code>initialize</code> that saves a reference to the <code>allCheckbox</code> DOM node.</p>
+<p>Reload in your browser. You should still be able to toggle all, <em>and</em> the &ldquo;checked&rdquo; warnings in the console should be gone.</p>
+<h2 id="add-the-proper-class-for-completed-items"><a name="user-content-add-the-proper-class-for-completed-items" href="#add-the-proper-class-for-completed-items" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Add the proper class for completed items</h2>
+<p>When an item is completed, it&rsquo;s supposed to get a &ldquo;completed&rdquo; class applied to it, but we haven&rsquo;t done that so the items don&rsquo;t get pleasantly crossed off on our list. The React addons include a very pleasant way to handle this: the <code>classSet</code>. Here&rsquo;s how we use it in <code>ItemComponent.render</code>:</p>
+<pre><code class="javascript">    render: function () {
+      var todo = this.props.todo,
+        itemClasses = React.addons.classSet({
+            completed: todo.get(&quot;completed&quot;)
+        });
+      return (&lt;li className={itemClasses}&gt;
+</code></pre>
+
+<p><code>classSet</code> creates a string in which all of the keys of the passed in object which have <code>true</code> values will be present. So, <code>itemClasses</code> will either be an empty string or contain <code>completed</code>. Refresh with this and you&rsquo;ll see that completed items now appear crossed out.</p>
+<h2 id="allow-editing"><a name="user-content-allow-editing" href="#allow-editing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Allow editing</h2>
+<p>To edit, we&rsquo;re introducing a bit of &ldquo;view state&rdquo;. It&rsquo;s not really a part of our model because a todo doesn&rsquo;t itself have the notion of being edited. React provides the concept of &ldquo;state&rdquo; as independent from &ldquo;props&rdquo; for storing just this kind of information. Let&rsquo;s set some initial state on <code>ItemComponent</code> so that  editing mode starts in the &ldquo;off&rdquo; state:</p>
+<pre><code class="javascript">    getInitialState: function () {
+      return {
+        editing: false
+      };
+    },    
+</code></pre>
+
+<p>Next, we&rsquo;ll make an <code>edit</code> method that sets this to <code>true</code>:</p>
+<pre><code class="javascript">    edit: function (e) {
+        this.setState({
+            editing: true
+        });
+    },
+</code></pre>
+
+<p>Whenever you use <code>this.setState</code> in a React component, React will rerender the component automatically. We need to add the editing class when <code>editing</code> is true:</p>
+<pre><code class="javascript">    render: function () {
+        var todo = this.props.todo,
+            itemClasses = React.addons.classSet({
+                completed: todo.get(&quot;completed&quot;),
+                editing: this.state.editing
+            });
+</code></pre>
+
+<p>Finally, we call our <code>edit</code> method when the <code>&lt;label&gt;</code> is double clicked:</p>
+<pre><code class="javascript">                &lt;label onDoubleClick={this.edit}&gt;{todo.get(&quot;title&quot;)}&lt;/label&gt;
+</code></pre>
+
+<p>Reload, and by double clicking you&rsquo;ll see that we can switch to editing mode now.</p>
+<h2 id="focusing-the-edit-field"><a name="user-content-focusing-the-edit-field" href="#focusing-the-edit-field" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Focusing the edit field</h2>
+<p>One irritating difference between this todo component and the original one is that double clicking the label doesn&rsquo;t focus the input field. This is one of those times when we need to interact with the DOM directly, because only when the <code>editing</code> state changes do we want to focus the node. React has a simple solution for this as part of its component life cycle: the <code>componentDidUpdate</code> method. Here&rsquo;s what we write:</p>
+<pre><code class="javascript">    componentDidUpdate: function (oldProps, oldState) {
+        if (this.state.editing &amp;&amp; !oldState.editing) {
+            this.refs.editField.getDOMNode().focus();
+        }
+    },
+</code></pre>
+
+<p>The code is pretty clear: we get the previous versions of props and state, so we can see when we transition from not editing to editing. Then, we can get the actual DOM node and call <code>focus</code> on it. We need to add the ref when we render the component, like so:</p>
+<pre><code class="javascript">            &lt;input className=&quot;edit&quot; ref=&quot;editField&quot; defaultValue={todo.get(&quot;title&quot;)} /&gt;
+</code></pre>
+
+<p>Reload with those code changes, and now you have an automatically focused input field.</p>
+<h2 id="handle-enter-and-escape"><a name="user-content-handle-enter-and-escape" href="#handle-enter-and-escape" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Handle enter and escape</h2>
+<p>Let&rsquo;s copy <code>close</code>, <code>updateOnEnter</code>, <code>revertOnEscape</code> and <code>clear</code> from <code>TodoView</code> and paste them into <code>ItemComponent</code>. The <code>close</code> method contains this comment:</p>
+<pre><code class="javascript">            // We don't want to handle blur events from an item that is no
+            // longer being edited. Relying on the CSS class here has the
+            // benefit of us not having to maintain state in the DOM and the
+            // JavaScript logic.
+            if (!this.$el.hasClass('editing')) {
+</code></pre>
+
+<p>Funnily enough, React gives us the exact opposite situation. React lets us maintain the state in JavaScript and not have to think about the DOM.</p>
+<p>For <code>close</code>, we need to get the value using our <code>ref</code>, we check editing via <code>this.state</code> and we break out of editing mode via <code>this.setState</code>, not by manipulating classes in the DOM:</p>
+<pre><code class="javascript">    close: function () {
+      var value = this.refs.editField.getDOMNode().value;
+      var trimmedValue = value.trim();
+
+      if (!this.state.editing) {
+        return;
+      }
+
+      if (trimmedValue) {
+        this.props.todo.save({ title: trimmedValue });
+
+        if (value !== trimmedValue) {
+          // Model values changes consisting of whitespaces only are
+          // not causing change to be triggered Therefore we've to
+          // compare untrimmed version with a trimmed one to check
+          // whether anything changed
+          // And if yes, we've to trigger change event ourselves
+          this.props.todo.trigger('change');
+        }
+      } else {
+        this.clear();
+      }
+
+      this.setState({
+        editing: false
+      });
+    },
+</code></pre>
+
+<p><code>updateOnEnter</code> is unchanged, clear needs to refer to <code>this.props.todo</code>:</p>
+<pre><code class="javascript">    clear: function () {
+      this.props.todo.destroy();
+    },
+</code></pre>
+
+<p><code>revertOnEscape</code> needs changes similar to those in <code>close</code>:</p>
+<pre><code class="javascript">    revertOnEscape: function (e) {
+      if (e.which === ESC_KEY) {
+        this.setState({
+          editing: false
+        });
+
+        // Also reset the hidden input back to the original value.
+        this.refs.editField.getDOMNode().value = this.props.todo.get(&quot;title&quot;);
+      }
+    },
+</code></pre>
+
+<p>Finally, we wire up blur, keypress and keydown events on the input field:</p>
+<pre><code class="javascript">            &lt;input className=&quot;edit&quot; ref=&quot;editField&quot; onKeyDown={this.revertOnEscape} onBlur={this.close} onKeyPress={this.updateOnEnter} defaultValue={todo.get(&quot;title&quot;)} /&gt;
+</code></pre>
+
+<h2 id="filtering-the-todos"><a name="user-content-filtering-the-todos" href="#filtering-the-todos" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Filtering the todos</h2>
+<p>At this point, we&rsquo;ve converted over everything in <code>TodoView</code>, <em>except</em> for hiding completed todos. While we <em>could</em> have items manage their own visibility as <code>TodoView</code> does, it seems cleaner for the <code>AppComponent</code> to simply choose not to render hidden todos. It&rsquo;s also really easy. <code>TodoView.isHidden</code> looks like this:</p>
+<pre><code class="javascript">        isHidden: function () {
+            return this.model.get('completed') ?
+                app.TodoFilter === 'active' :
+                app.TodoFilter === 'completed';
+        },
+</code></pre>
+
+<p>We just need to turn the logic around to tell us whether a given todo is visible and then we can use that logic in a filter function back in <code>AppComponent.render</code>:</p>
+<pre><code class="javascript">          todoItems = this.props.todos.filter(function (todo) {
+            return todo.get(&quot;completed&quot;) ? app.TodoFilter !== &quot;active&quot; : app.TodoFilter !== &quot;completed&quot;;
+          }).map(function (todo) {
+            return (&lt;app.ItemComponent todo={todo} key={todo.get(&quot;order&quot;)} /&gt;);
+          });
+</code></pre>
+
+<p>This is standard functional programming style. We filter the todos and then map the filtered todos to render the components.</p>
+<p>Reload and you&rsquo;ll see that it really was that easy.</p>
+<h2 id="selecting-the-proper-filter-visually"><a name="user-content-selecting-the-proper-filter-visually" href="#selecting-the-proper-filter-visually" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Selecting the proper filter visually</h2>
+<p>There&rsquo;s code in <code>AppView.render</code> to visually select the current filter. We should replace this with React style in <code>StatsComponent</code>:</p>
+<pre><code class="javascript">          allFilterClass = app.TodoFilter === &quot;&quot; ? &quot;selected&quot; : &quot;&quot;,
+          activeFilterClass = app.TodoFilter === &quot;active&quot; ? &quot;selected&quot; : &quot;&quot;,
+          completedFilterClass = app.TodoFilter === &quot;completed&quot; ? &quot;selected&quot; : &quot;&quot;;
+</code></pre>
+
+<p>We could have used React.addons.classSet there, but it was just a single class, so it seemed simple enough to do it this way.</p>
+<p>The markup for <code>StatsComponent</code> now looks like this:</p>
+<pre><code class="javascript">      return (&lt;div&gt;
+          &lt;span id=&quot;todo-count&quot;&gt;&lt;strong&gt;{remaining}&lt;/strong&gt; {itemLabel} left&lt;/span&gt;
+          &lt;ul id=&quot;filters&quot;&gt;
+            &lt;li&gt;
+            &lt;a className={allFilterClass} href=&quot;#/&quot;&gt;All&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a className={activeFilterClass} href=&quot;#/active&quot;&gt;Active&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a className={completedFilterClass} href=&quot;#/completed&quot;&gt;Completed&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+          {clearButton}
+        &lt;/div&gt;);
+</code></pre>
+
+<h2 id="only-rendering-main-as-needed"><a name="user-content-only-rendering-main-as-needed" href="#only-rendering-main-as-needed" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Only rendering main as needed</h2>
+<p><code>AppView.render</code> includes this little bit:</p>
+<pre><code class="javascript">            if (app.todos.length) {
+                this.$main.show();
+            } else {
+                this.$main.hide();
+            }
+</code></pre>
+
+<p>While we <em>could</em> show and hide the nodes, with React it&rsquo;s easy enough to just render or not. To do this, we pull the main section up into a variable in <code>AppComponent.render</code> and then refer to that variable in our markup:</p>
+<pre><code class="javascript">      var main = null;
+      if (this.props.todos.length) {
+        main = (&lt;section id=&quot;main&quot;&gt;
+          &lt;input id=&quot;toggle-all&quot; type=&quot;checkbox&quot; onChange={this.toggleAllComplete} checked={allComplete} /&gt;
+          &lt;label htmlFor=&quot;toggle-all&quot;&gt;Mark all as complete&lt;/label&gt;
+          &lt;ul id=&quot;todo-list&quot;&gt;{todoItems}&lt;/ul&gt;
+        &lt;/section&gt;);
+      }
+
+      return (&lt;div&gt;
+        &lt;header id=&quot;header&quot;&gt;
+          &lt;h1&gt;todos&lt;/h1&gt;
+          &lt;input id=&quot;new-todo&quot; placeholder=&quot;What needs to be done?&quot; autoFocus onKeyPress={this.handleKeyPress} ref=&quot;newTodo&quot; /&gt;
+        &lt;/header&gt;
+        {main}
+        &lt;footer id=&quot;footer&quot;&gt;{stats}&lt;/footer&gt;
+        &lt;/div&gt;
+      );
+</code></pre>
+
+<p>If you try this out, you&rsquo;ll see that the main section goes away entirely when there are no todos.</p>
+<h2 id="clear-completed-todos"><a name="user-content-clear-completed-todos" href="#clear-completed-todos" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Clear completed todos</h2>
+<p>There is just one last piece of functionality lurking in the old Backbone views: the clear completed todos button. Move <code>AppView.clearCompleted</code> into the <code>StatsComponent</code> and change it to reference <code>this.props.todos</code>:</p>
+<pre><code class="javascript">      clearCompleted: function () {
+        _.invoke(this.props.todos.completed(), 'destroy');
+        return false;
+      },
+</code></pre>
+
+<p>Then, we add an <code>onClick</code> to the <code>clearButton</code>:</p>
+<pre><code class="javascript">          clearButton = !completed ? null : (&lt;button onClick={this.clearCompleted} id=&quot;clear-completed&quot;&gt;Clear completed ({completed})&lt;/button&gt;),
+</code></pre>
+
+<p>Make sure to remove the event from <code>AppView.events</code>. Reload, and that feature should work.</p>
+<h2 id="final-cleanup"><a name="user-content-final-cleanup" href="#final-cleanup" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Final cleanup</h2>
+<p>We can delete <code>TodoView</code> entirely and clear out almost all of <code>AppView</code>. One minor change to make is in <code>initialize</code>, we need to point the &ldquo;change\:completed&rdquo; and &ldquo;filter&rdquo; events at <code>this.render</code>. With React, any change basically means &ldquo;rerender&rdquo;.</p>
+<p>I also removed <code>jQuery</code> from the top and bottom of the file.</p>
+<p>Here&rsquo;s the final app-view.jsx:</p>
+<pre><code class="javascript">/*global React, Backbone, jQuery, _, ENTER_KEY, document */
+var app = app || {};
+
+(function () {
+    'use strict';
+
+  var StatsComponent = React.createClass({
+      clearCompleted: function () {
+        _.invoke(this.props.todos.completed(), 'destroy');
+        return false;
+      },
+
+    render: function () {
+      var completed = this.props.todos.completed().length,
+          remaining = this.props.todos.remaining().length,
+          itemLabel = remaining === 1 ? 'item' : 'items',
+          clearButton = !completed ? null : (&lt;button onClick={this.clearCompleted} id=&quot;clear-completed&quot;&gt;Clear completed ({completed})&lt;/button&gt;),
+          allFilterClass = app.TodoFilter === &quot;&quot; ? &quot;selected&quot; : &quot;&quot;,
+          activeFilterClass = app.TodoFilter === &quot;active&quot; ? &quot;selected&quot; : &quot;&quot;,
+          completedFilterClass = app.TodoFilter === &quot;completed&quot; ? &quot;selected&quot; : &quot;&quot;;
+
+      return (&lt;div&gt;
+          &lt;span id=&quot;todo-count&quot;&gt;&lt;strong&gt;{remaining}&lt;/strong&gt; {itemLabel} left&lt;/span&gt;
+          &lt;ul id=&quot;filters&quot;&gt;
+            &lt;li&gt;
+            &lt;a className={allFilterClass} href=&quot;#/&quot;&gt;All&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a className={activeFilterClass} href=&quot;#/active&quot;&gt;Active&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a className={completedFilterClass} href=&quot;#/completed&quot;&gt;Completed&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+          {clearButton}
+        &lt;/div&gt;);
+    }
+  });
+
+  var AppComponent = React.createClass({
+    handleKeyPress: function (e) {
+      var input = this.refs.newTodo.getDOMNode(),
+          text = input.value.trim();
+
+      if (e.which === ENTER_KEY &amp;&amp; text) {
+        this.props.todos.create({
+          title: text,
+          order: this.props.todos.nextOrder(),
+          completed: false
+        });
+        input.value = &quot;&quot;;
+      }
+    },
+
+    allComplete: function () {
+        return this.props.todos.remaining().length === 0;
+    },
+
+    toggleAllComplete: function () {
+        var completed = !this.allComplete();
+
+        this.props.todos.each(function (todo) {
+            todo.save({
+                completed: completed
+            });
+        });
+    },
+
+    render: function () {
+      var stats = !this.props.todos.length ? null : (&lt;StatsComponent todos={this.props.todos} /&gt;),
+          allComplete = this.allComplete(),
+          todoItems = this.props.todos.filter(function (todo) {
+            return todo.get(&quot;completed&quot;) ? app.TodoFilter !== &quot;active&quot; : app.TodoFilter !== &quot;completed&quot;;
+          }).map(function (todo) {
+            return (&lt;app.ItemComponent todo={todo} key={todo.get(&quot;order&quot;)} /&gt;);
+          });
+
+      var main = null;
+      if (this.props.todos.length) {
+        main = (&lt;section id=&quot;main&quot;&gt;
+          &lt;input id=&quot;toggle-all&quot; type=&quot;checkbox&quot; onChange={this.toggleAllComplete} checked={allComplete} /&gt;
+          &lt;label htmlFor=&quot;toggle-all&quot;&gt;Mark all as complete&lt;/label&gt;
+          &lt;ul id=&quot;todo-list&quot;&gt;{todoItems}&lt;/ul&gt;
+        &lt;/section&gt;);
+      }
+
+      return (&lt;div&gt;
+        &lt;header id=&quot;header&quot;&gt;
+          &lt;h1&gt;todos&lt;/h1&gt;
+          &lt;input id=&quot;new-todo&quot; placeholder=&quot;What needs to be done?&quot; autoFocus onKeyPress={this.handleKeyPress} ref=&quot;newTodo&quot; /&gt;
+        &lt;/header&gt;
+        {main}
+        &lt;footer id=&quot;footer&quot;&gt;{stats}&lt;/footer&gt;
+        &lt;/div&gt;
+      );
+    }
+  });
+
+  // The Application
+  // ---------------
+
+  // Our overall **AppView** is the top-level piece of UI.
+  app.AppView = Backbone.View.extend({
+    initialize: function () {
+      React.render(&lt;AppComponent todos={app.todos} /&gt;, document.getElementById(&quot;todoapp&quot;));
+      this.listenTo(app.todos, 'change:completed', this.render);
+      this.listenTo(app.todos, 'filter', this.render);
+      this.listenTo(app.todos, 'all', this.render);
+
+      // Suppresses 'add' events with {reset: true} and prevents the app view
+      // from being re-rendered for every model. Only renders when the 'reset'
+      // event is triggered at the end of the fetch.
+      app.todos.fetch({reset: true});
+    },
+
+    // Re-rendering the App just means refreshing the statistics -- the rest
+    // of the app doesn't change.
+    render: function () {
+      React.render(&lt;AppComponent todos={app.todos} /&gt;, document.getElementById(&quot;todoapp&quot;));
+    }
+  });
+})();
+</code></pre>
+
+<p>and todo-view.jsx:</p>
+<pre><code class="javascript">/*global React, Backbone, jQuery, _, ENTER_KEY, ESC_KEY */
+var app = app || {};
+
+(function () {
+    'use strict';
+
+    // Todo Item View
+    // --------------
+
+  app.ItemComponent = React.createClass({
+
+    getInitialState: function () {
+        return {
+            editing: false
+        };
+    },
+
+    toggleCompleted: function () {
+        this.props.todo.toggle();
+    },
+
+    componentDidUpdate: function (oldProps, oldState) {
+        if (this.state.editing &amp;&amp; !oldState.editing) {
+            this.refs.editField.getDOMNode().focus();
+        }
+    },
+
+    edit: function (e) {
+        this.setState({
+            editing: true
+        });
+    },
+
+    close: function () {
+        var value = this.refs.editField.getDOMNode().value;
+              var trimmedValue = value.trim();
+
+              if (!this.state.editing) {
+            return;
+              }
+
+              if (trimmedValue) {
+                    this.props.todo.save({ title: trimmedValue });
+
+            if (value !== trimmedValue) {
+                // Model values changes consisting of whitespaces only are
+                // not causing change to be triggered Therefore we've to
+                // compare untrimmed version with a trimmed one to check
+                // whether anything changed
+                // And if yes, we've to trigger change event ourselves
+                this.props.todo.trigger('change');
+            }
+              } else {
+            this.clear();
+              }
+
+              this.setState({
+            editing: false
+        });
+        },
+
+        // If you hit `enter`, we're through editing the item.
+        updateOnEnter: function (e) {
+        if (e.which === ENTER_KEY) {
+            this.close();
+        }
+        },
+
+    clear: function () {
+              this.props.todo.destroy();
+        },
+
+    revertOnEscape: function (e) {
+        if (e.which === ESC_KEY) {
+            this.setState({
+                editing: false
+            });
+            // Also reset the hidden input back to the original value.
+            this.refs.editField.getDOMNode().value = this.props.todo.get('title');
+        }
+        },
+
+
+    render: function () {
+        var todo = this.props.todo,
+            itemClasses = React.addons.classSet({
+                completed: todo.get(&quot;completed&quot;),
+                editing: this.state.editing
+            });
+
+        return (&lt;li className={itemClasses}&gt;
+            &lt;div className=&quot;view&quot;&gt;
+                &lt;input className=&quot;toggle&quot; type=&quot;checkbox&quot; onChange={this.toggleCompleted} checked={todo.get(&quot;completed&quot;)} /&gt;
+                &lt;label onDoubleClick={this.edit}&gt;{todo.get(&quot;title&quot;)}&lt;/label&gt;
+                &lt;button className=&quot;destroy&quot; onClick={this.clear}&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;input className=&quot;edit&quot; ref=&quot;editField&quot; onKeyDown={this.revertOnEscape} onBlur={this.close} onKeyPress={this.updateOnEnter} defaultValue={todo.get(&quot;title&quot;)} /&gt;
+        &lt;/li&gt;);
+    }
+  });
+
+})();
+</code></pre>
+
+<h1 id="observations"><a name="user-content-observations" href="#observations" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Observations</h1>
+<ul>
+<li>The big win is the functional style. A given state of data will automatically result in a matching UI.</li>
+<li>The markup and JavaScript that operate on it are fundamentally coupled. Putting them together makes things clearer.</li>
+<li>The Backbone style stored view state in the DOM and the model in JS. The React version stores both in JS.</li>
+<li>The DOM is slow and not having to look up view state there is likely a win.</li>
+<li>When we did need to use the DOM, React provided very straightforward ways to do so.</li>
+<li>No jQuery required. Events are normalized and handled efficiently.</li>
+</ul></article></body></html>
