@@ -6,6 +6,22 @@ var app = app || {};
 
   // Todo Item View
   // --------------
+  app.ItemComponent = React.createClass({
+    render: function () {
+      var todo = this.props.todo;
+
+      return (<li>
+        <div className="view">
+          <input className="toggle" type="checkbox" checked={todo.get("completed")} />
+          <label>{todo.get("title")}</label>
+          <button className="destroy"></button>
+        </div>
+        <input className="edit" defaultValue={todo.get("title")} />
+      </li>);
+    }
+  });  
+  
+  
 
   // The DOM element for a todo item...
   app.TodoView = Backbone.View.extend({
