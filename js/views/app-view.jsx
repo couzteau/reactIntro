@@ -16,10 +16,9 @@ var app = app || {};
 
     // Delegated events for creating new items, and clearing completed ones.
     events: {
-      'keypress #new-todo': 'createOnEnter',
       'click #clear-completed': 'clearCompleted',
       'click #toggle-all': 'toggleAllComplete'
-    },
+    },   
 
     // At initialization we bind to the relevant events on the `Todos`
     // collection, when items are added or changed. Kick things off by
@@ -28,7 +27,6 @@ var app = app || {};
       React.render(<AppComponent todos={app.todos} />, document.getElementById("todoapp"));      
       
       this.allCheckbox = this.$('#toggle-all')[0];
-      this.$input = this.$('#new-todo');
       this.$footer = this.$('#footer');
       this.$main = this.$('#main');
       this.$list = $('#todo-list');
@@ -60,7 +58,7 @@ var app = app || {};
           } else {
               this.$main.hide();
           }
-    },
+    },  
 
     // Add a single todo item to the list by creating a view for it, and
     // appending its element to the `<ul>`.
@@ -81,24 +79,6 @@ var app = app || {};
 
     filterAll: function () {
       app.todos.each(this.filterOne, this);
-    },
-
-    // Generate the attributes for a new Todo item.
-    newAttributes: function () {
-      return {
-        title: this.$input.val().trim(),
-        order: app.todos.nextOrder(),
-        completed: false
-      };
-    },
-
-    // If you hit return in the main input field, create new **Todo** model,
-    // persisting it to *localStorage*.
-    createOnEnter: function (e) {
-      if (e.which === ENTER_KEY && this.$input.val().trim()) {
-        app.todos.create(this.newAttributes());
-        this.$input.val('');
-      }
     },
 
     // Clear all completed todo items, destroying their models.
@@ -145,6 +125,21 @@ var app = app || {};
   });  
   
   var AppComponent = React.createClass({
+    
+    handleKeyPress: function (e) {
+      var input = this.refs.newTodo.getDOMNode(),
+          text = input.value.trim();
+
+      if (e.which === ENTER_KEY && text) {
+        this.props.todos.create({
+          title: text,
+          order: this.props.todos.nextOrder(),
+          completed: false
+        });
+        input.value = "";
+      }
+    },       
+    
     render: function () {
       var stats = !this.props.todos.length ? null : (<StatsComponent todos={this.props.todos} />),
           allComplete = this.props.todos.remaining().length === 0;
