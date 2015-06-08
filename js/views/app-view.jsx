@@ -14,9 +14,6 @@ var app = app || {};
     // the App already present in the HTML.
     el: '#todoapp',
 
-    // Our template for the line of statistics at the bottom of the app.
-    statsTemplate: _.template($('#stats-template').html()),
-
     // Delegated events for creating new items, and clearing completed ones.
     events: {
       'keypress #new-todo': 'createOnEnter',
@@ -51,18 +48,18 @@ var app = app || {};
     // Re-rendering the App just means refreshing the statistics -- the rest
     // of the app doesn't change.
     render: function () {
-      React.render(<AppComponent todos={app.todos} />, document.getElementById("todoapp"));
+        React.render(<AppComponent todos={app.todos} />, document.getElementById("todoapp"));
 
-        if (app.todos.length) {
-            this.$main.show();
+          if (app.todos.length) {
+              this.$main.show();
 
-            this.$('#filters li a')
-                .removeClass('selected')
-                .filter('[href="#/' + (app.TodoFilter || '') + '"]')
-                .addClass('selected');
-        } else {
-            this.$main.hide();
-        }
+              this.$('#filters li a')
+                  .removeClass('selected')
+                  .filter('[href="#/' + (app.TodoFilter || '') + '"]')
+                  .addClass('selected');
+          } else {
+              this.$main.hide();
+          }
     },
 
     // Add a single todo item to the list by creating a view for it, and
