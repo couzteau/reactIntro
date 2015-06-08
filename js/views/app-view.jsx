@@ -152,8 +152,8 @@ var app = app || {};
       return (<div>
         <header id="header">
           <h1>todos</h1>
-          <input id="new-todo" placeholder="What needs to be done?" autofocus />
-        </header>
+          <input id="new-todo" placeholder="What needs to be done?" autoFocus onKeyPress={this.handleKeyPress} ref="newTodo" />
+        </header>              
         <section id="main">
           <input id="toggle-all" type="checkbox" checked={allComplete} />
           <label htmlFor="toggle-all">Mark all as complete</label>
