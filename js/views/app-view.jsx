@@ -28,6 +28,8 @@ var app = app || {};
     // collection, when items are added or changed. Kick things off by
     // loading any preexisting todos that might be saved in *localStorage*.
     initialize: function () {
+      React.render(<AppComponent todos={app.todos} />, document.getElementById("todoapp"));      
+      
       this.allCheckbox = this.$('#toggle-all')[0];
       this.$input = this.$('#new-todo');
       this.$footer = this.$('#footer');
@@ -49,28 +51,18 @@ var app = app || {};
     // Re-rendering the App just means refreshing the statistics -- the rest
     // of the app doesn't change.
     render: function () {
-      var completed = app.todos.completed().length;
-      var remaining = app.todos.remaining().length;
+      React.render(<AppComponent todos={app.todos} />, document.getElementById("todoapp"));
 
-      if (app.todos.length) {
-        this.$main.show();
-        this.$footer.show();
+        if (app.todos.length) {
+            this.$main.show();
 
-        this.$footer.html(this.statsTemplate({
-          completed: completed,
-          remaining: remaining
-        }));
-
-        this.$('#filters li a')
-          .removeClass('selected')
-          .filter('[href="#/' + (app.TodoFilter || '') + '"]')
-          .addClass('selected');
-      } else {
-        this.$main.hide();
-        this.$footer.hide();
-      }
-
-      this.allCheckbox.checked = !remaining;
+            this.$('#filters li a')
+                .removeClass('selected')
+                .filter('[href="#/' + (app.TodoFilter || '') + '"]')
+                .addClass('selected');
+        } else {
+            this.$main.hide();
+        }
     },
 
     // Add a single todo item to the list by creating a view for it, and
@@ -129,27 +121,52 @@ var app = app || {};
     }
   });
 
+  var StatsComponent = React.createClass({
+    render: function () {
+      var completed = this.props.todos.completed().length,
+          remaining = this.props.todos.remaining().length,
+          itemLabel = remaining === 1 ? 'item' : 'items',
+          clearButton = !completed ? null : (<button id="clear-completed">Clear completed ({completed})</button>);
+
+      return (<div>
+          <span id="todo-count"><strong>{remaining}</strong> {itemLabel} left</span>
+          <ul id="filters">
+            <li>
+            <a className="selected" href="#/">All</a>
+            </li>
+            <li>
+              <a href="#/active">Active</a>
+            </li>
+            <li>
+              <a href="#/completed">Completed</a>
+            </li>
+          </ul>
+          {clearButton}
+        </div>);
+    }    
+    
+  });  
   
   var AppComponent = React.createClass({
     render: function () {
+      var stats = !this.props.todos.length ? null : (<StatsComponent todos={this.props.todos} />),
+          allComplete = this.props.todos.remaining().length === 0;
+
       return (<div>
         <header id="header">
           <h1>todos</h1>
           <input id="new-todo" placeholder="What needs to be done?" autofocus />
         </header>
         <section id="main">
-          <input id="toggle-all" type="checkbox" />
+          <input id="toggle-all" type="checkbox" checked={allComplete} />
           <label htmlFor="toggle-all">Mark all as complete</label>
           <ul id="todo-list"></ul>
         </section>
-        <footer id="footer"></footer>
+        <footer id="footer">{stats}</footer>
         </div>
       );
     }
   });
-                           
-  $(function () {
-    React.renderComponent(<AppComponent/>, document.getElementById("todoapp"));
-  });                           
+                        
   
 })(jQuery);
