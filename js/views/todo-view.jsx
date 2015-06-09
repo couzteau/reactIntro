@@ -7,12 +7,17 @@ var app = app || {};
   // Todo Item View
   // --------------
   app.ItemComponent = React.createClass({
+    // Toggle the `"completed"` state of the model.
+    toggleCompleted: function () {
+      this.model.toggle();
+    },    
+    
     render: function () {
       var todo = this.props.todo;
 
       return (<li>
         <div className="view">
-          <input className="toggle" type="checkbox" checked={todo.get("completed")} />
+          <input className="toggle" type="checkbox" onChange={this.toggleCompleted} checked={this.props.todo.get("completed")} />    
           <label>{todo.get("title")}</label>
           <button className="destroy"></button>
         </div>
@@ -33,7 +38,6 @@ var app = app || {};
 
     // The DOM events specific to an item.
     events: {
-      'click .toggle': 'toggleCompleted',
       'dblclick label': 'edit',
       'click .destroy': 'clear',
       'keypress .edit': 'updateOnEnter',
@@ -79,11 +83,6 @@ var app = app || {};
       return this.model.get('completed') ?
         app.TodoFilter === 'active' :
         app.TodoFilter === 'completed';
-    },
-
-    // Toggle the `"completed"` state of the model.
-    toggleCompleted: function () {
-      this.model.toggle();
     },
 
     // Switch this view into `"editing"` mode, displaying the input field.
