@@ -89,7 +89,7 @@ var app = app || {};
       var completed = this.props.todos.completed().length,
           remaining = this.props.todos.remaining().length,
           itemLabel = remaining === 1 ? 'item' : 'items',
-          clearButton = !completed ? null : (<button id="clear-completed">Clear completed ({completed})</button>),
+          clearButton = !completed ? null : (<button onClick={this.clearCompleted} id="clear-completed">Clear completed ({completed})</button>),
           allFilterClass = app.TodoFilter === "" ? "selected" : "",
           activeFilterClass = app.TodoFilter === "active" ? "selected" : "",
           completedFilterClass = app.TodoFilter === "completed" ? "selected" : "";
