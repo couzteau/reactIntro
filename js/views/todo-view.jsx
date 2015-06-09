@@ -13,9 +13,12 @@ var app = app || {};
     },    
     
     render: function () {
-      var todo = this.props.todo;
-
-      return (<li>
+      var todo = this.props.todo,
+          itemClasses = React.addons.classSet({
+            completed: todo.get("completed")
+          });
+      
+      return (<li className={itemClasses}>
         <div className="view">
           <input className="toggle" type="checkbox" onChange={this.toggleCompleted} checked={this.props.todo.get("completed")} />    
           <label>{todo.get("title")}</label>

@@ -16,8 +16,7 @@ var app = app || {};
 
     // Delegated events for creating new items, and clearing completed ones.
     events: {
-      'click #clear-completed': 'clearCompleted',
-      'click #toggle-all': 'toggleAllComplete'
+      'click #clear-completed': 'clearCompleted'
     },   
 
     // At initialization we bind to the relevant events on the `Todos`
@@ -26,10 +25,8 @@ var app = app || {};
     initialize: function () {
       React.render(<AppComponent todos={app.todos} />, document.getElementById("todoapp"));      
       
-      this.allCheckbox = this.$('#toggle-all')[0];
       this.$footer = this.$('#footer');
       this.$main = this.$('#main');
-      this.$list = $('#todo-list');
 
       this.listenTo(app.todos, 'add', this.addOne);
       this.listenTo(app.todos, 'reset', this.addAll);
@@ -63,14 +60,12 @@ var app = app || {};
     // Add a single todo item to the list by creating a view for it, and
     // appending its element to the `<ul>`.
     addOne: function (todo) {
-      var view = new app.TodoView({ model: todo });
-      this.$list.append(view.render().el);
+
     },
 
     // Add all items in the **Todos** collection at once.
     addAll: function () {
-      this.$list.html('');
-      app.todos.each(this.addOne, this);
+
     },
 
     filterOne: function (todo) {
@@ -85,16 +80,6 @@ var app = app || {};
     clearCompleted: function () {
       _.invoke(app.todos.completed(), 'destroy');
       return false;
-    },
-
-    toggleAllComplete: function () {
-      var completed = this.allCheckbox.checked;
-
-      app.todos.each(function (todo) {
-        todo.save({
-          completed: completed
-        });
-      });
     }
   });
 
@@ -138,11 +123,28 @@ var app = app || {};
         });
         input.value = "";
       }
-    },       
+    },
+    
+    allComplete: function () {
+        return this.props.todos.remaining().length === 0;
+    },    
+
+    toggleAllComplete: function () {
+      var completed = this.allCheckbox.checked;
+
+      this.props.todos.each(function (todo) {
+        todo.save({
+          completed: completed
+        });
+      });
+    },    
     
     render: function () {
       var stats = !this.props.todos.length ? null : (<StatsComponent todos={this.props.todos} />),
-          allComplete = this.props.todos.remaining().length === 0;
+          allComplete = this.allComplete(),
+          todoItems = this.props.todos.map(function (todo) {
+            return (<app.ItemComponent todo={todo} key={todo.get("order")} />);
+          });
 
       return (<div>
         <header id="header">
@@ -150,9 +152,9 @@ var app = app || {};
           <input id="new-todo" placeholder="What needs to be done?" autoFocus onKeyPress={this.handleKeyPress} ref="newTodo" />
         </header>              
         <section id="main">
-          <input id="toggle-all" type="checkbox" checked={allComplete} />
+          <input id="toggle-all" type="checkbox" onChange={this.toggleAllComplete} checked={allComplete} />
           <label htmlFor="toggle-all">Mark all as complete</label>
-          <ul id="todo-list"></ul>
+          <ul id="todo-list">{todoItems}</ul>
         </section>
         <footer id="footer">{stats}</footer>
         </div>
