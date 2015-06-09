@@ -74,16 +74,17 @@ var app = app || {};
 
     filterAll: function () {
       app.todos.each(this.filterOne, this);
-    },
-
-    // Clear all completed todo items, destroying their models.
-    clearCompleted: function () {
-      _.invoke(app.todos.completed(), 'destroy');
-      return false;
     }
   });
 
   var StatsComponent = React.createClass({
+    
+    // Clear all completed todo items, destroying their models.
+    clearCompleted: function () {
+      _.invoke(this.props.todos.completed(), 'destroy');
+      return false;
+    },
+    
     render: function () {
       var completed = this.props.todos.completed().length,
           remaining = this.props.todos.remaining().length,
@@ -151,16 +152,21 @@ var app = app || {};
             return (<app.ItemComponent todo={todo} key={todo.get("order")} />);
           });
 
+      var main = null;
+      if (this.props.todos.length) {
+        main = (<section id="main">
+          <input id="toggle-all" type="checkbox" onChange={this.toggleAllComplete} checked={allComplete} />
+          <label htmlFor="toggle-all">Mark all as complete</label>
+          <ul id="todo-list">{todoItems}</ul>
+        </section>);
+      }
+      
       return (<div>
         <header id="header">
           <h1>todos</h1>
           <input id="new-todo" placeholder="What needs to be done?" autoFocus onKeyPress={this.handleKeyPress} ref="newTodo" />
-        </header>              
-        <section id="main">
-          <input id="toggle-all" type="checkbox" onChange={this.toggleAllComplete} checked={allComplete} />
-          <label htmlFor="toggle-all">Mark all as complete</label>
-          <ul id="todo-list">{todoItems}</ul>
-        </section>
+        </header>
+        {main}
         <footer id="footer">{stats}</footer>
         </div>
       );
