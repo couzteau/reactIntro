@@ -142,7 +142,9 @@ var app = app || {};
     render: function () {
       var stats = !this.props.todos.length ? null : (<StatsComponent todos={this.props.todos} />),
           allComplete = this.allComplete(),
-          todoItems = this.props.todos.map(function (todo) {
+          todoItems = this.props.todos.filter(function (todo) {
+            return todo.get("completed") ? app.TodoFilter !== "active" : app.TodoFilter !== "completed";
+          }).map(function (todo) {
             return (<app.ItemComponent todo={todo} key={todo.get("order")} />);
           });
 
