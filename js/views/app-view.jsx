@@ -88,19 +88,22 @@ var app = app || {};
       var completed = this.props.todos.completed().length,
           remaining = this.props.todos.remaining().length,
           itemLabel = remaining === 1 ? 'item' : 'items',
-          clearButton = !completed ? null : (<button id="clear-completed">Clear completed ({completed})</button>);
+          clearButton = !completed ? null : (<button id="clear-completed">Clear completed ({completed})</button>),
+          allFilterClass = app.TodoFilter === "" ? "selected" : "",
+          activeFilterClass = app.TodoFilter === "active" ? "selected" : "",
+          completedFilterClass = app.TodoFilter === "completed" ? "selected" : "";
 
       return (<div>
           <span id="todo-count"><strong>{remaining}</strong> {itemLabel} left</span>
           <ul id="filters">
             <li>
-            <a className="selected" href="#/">All</a>
+            <a className={allFilterClass} href="#/">All</a>
             </li>
             <li>
-              <a href="#/active">Active</a>
+              <a className={activeFilterClass} href="#/active">Active</a>
             </li>
             <li>
-              <a href="#/completed">Completed</a>
+              <a className={completedFilterClass} href="#/completed">Completed</a>
             </li>
           </ul>
           {clearButton}
