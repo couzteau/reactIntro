@@ -4,79 +4,6 @@ var app = app || {};
 (function ($) {
   'use strict';
 
-  // The Application
-  // ---------------
-
-  // Our overall **AppView** is the top-level piece of UI.
-  app.AppView = Backbone.View.extend({
-
-    // Instead of generating a new element, bind to the existing skeleton of
-    // the App already present in the HTML.
-    el: '#todoapp',
-
-    // Delegated events for creating new items, and clearing completed ones.
-    events: {
-      'click #clear-completed': 'clearCompleted'
-    },   
-
-    // At initialization we bind to the relevant events on the `Todos`
-    // collection, when items are added or changed. Kick things off by
-    // loading any preexisting todos that might be saved in *localStorage*.
-    initialize: function () {
-      React.render(<AppComponent todos={app.todos} />, document.getElementById("todoapp"));      
-      
-      this.$footer = this.$('#footer');
-      this.$main = this.$('#main');
-
-      this.listenTo(app.todos, 'add', this.addOne);
-      this.listenTo(app.todos, 'reset', this.addAll);
-      this.listenTo(app.todos, 'change:completed', this.filterOne);
-      this.listenTo(app.todos, 'filter', this.filterAll);
-      this.listenTo(app.todos, 'all', this.render);
-
-      // Suppresses 'add' events with {reset: true} and prevents the app view
-      // from being re-rendered for every model. Only renders when the 'reset'
-      // event is triggered at the end of the fetch.
-      app.todos.fetch({reset: true});
-    },
-
-    // Re-rendering the App just means refreshing the statistics -- the rest
-    // of the app doesn't change.
-    render: function () {
-        React.render(<AppComponent todos={app.todos} />, document.getElementById("todoapp"));
-
-          if (app.todos.length) {
-              this.$main.show();
-
-              this.$('#filters li a')
-                  .removeClass('selected')
-                  .filter('[href="#/' + (app.TodoFilter || '') + '"]')
-                  .addClass('selected');
-          } else {
-              this.$main.hide();
-          }
-    },  
-
-    // Add a single todo item to the list by creating a view for it, and
-    // appending its element to the `<ul>`.
-    addOne: function (todo) {
-
-    },
-
-    // Add all items in the **Todos** collection at once.
-    addAll: function () {
-
-    },
-
-    filterOne: function (todo) {
-      todo.trigger('visible');
-    },
-
-    filterAll: function () {
-      app.todos.each(this.filterOne, this);
-    }
-  });
-
   var StatsComponent = React.createClass({
     
     // Clear all completed todo items, destroying their models.
@@ -172,6 +99,34 @@ var app = app || {};
       );
     }
   });
+    
+  // The Application
+  // ---------------
+
+  // Our overall **AppView** is the top-level piece of UI.
+  app.AppView = Backbone.View.extend({  
+
+    // At initialization we bind to the relevant events on the `Todos`
+    // collection, when items are added or changed. Kick things off by
+    // loading any preexisting todos that might be saved in *localStorage*.
+    initialize: function () {
+      React.render(<AppComponent todos={app.todos} />, document.getElementById("todoapp"));      
+      this.listenTo(app.todos, 'change:completed', this.render);
+      this.listenTo(app.todos, 'filter', this.render);
+      this.listenTo(app.todos, 'all', this.render);
+
+      // Suppresses 'add' events with {reset: true} and prevents the app view
+      // from being re-rendered for every model. Only renders when the 'reset'
+      // event is triggered at the end of the fetch.
+      app.todos.fetch({reset: true});
+    },
+
+    // Re-rendering the App just means refreshing the statistics -- the rest
+    // of the app doesn't change.
+    render: function () {
+        React.render(<AppComponent todos={app.todos} />, document.getElementById("todoapp"));
+    }
+  });    
                         
   
 })(jQuery);
