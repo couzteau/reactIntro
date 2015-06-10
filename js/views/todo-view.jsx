@@ -1,7 +1,7 @@
 /*global Backbone, jQuery, _, ENTER_KEY, ESC_KEY */
 var app = app || {};
 
-(function ($) {
+(function () {
   'use strict';
 
   // Todo Item View
@@ -56,10 +56,10 @@ var app = app || {};
 			  this.setState({
                 editing: false
               });
-		},
+    },
 
-		// If you hit `enter`, we're through editing the item.
-		updateOnEnter: function (e) {
+    // If you hit `enter`, we're through editing the item.
+    updateOnEnter: function (e) {
         if (e.which === ENTER_KEY) {
             this.close();
         }
@@ -98,4 +98,4 @@ var app = app || {};
   });  
   
  
-})(jQuery);
+})();

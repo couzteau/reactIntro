@@ -1,12 +1,10 @@
 /*global Backbone, jQuery, _, ENTER_KEY */
 var app = app || {};
 
-(function ($) {
+(function () {
   'use strict';
 
   var StatsComponent = React.createClass({
-    
-    // Clear all completed todo items, destroying their models.
     clearCompleted: function () {
       _.invoke(this.props.todos.completed(), 'destroy');
       return false;
@@ -41,7 +39,6 @@ var app = app || {};
   });  
   
   var AppComponent = React.createClass({
-    
     handleKeyPress: function (e) {
       var input = this.refs.newTodo.getDOMNode(),
           text = input.value.trim();
@@ -105,10 +102,6 @@ var app = app || {};
 
   // Our overall **AppView** is the top-level piece of UI.
   app.AppView = Backbone.View.extend({  
-
-    // At initialization we bind to the relevant events on the `Todos`
-    // collection, when items are added or changed. Kick things off by
-    // loading any preexisting todos that might be saved in *localStorage*.
     initialize: function () {
       React.render(<AppComponent todos={app.todos} />, document.getElementById("todoapp"));      
       this.listenTo(app.todos, 'change:completed', this.render);
@@ -127,6 +120,5 @@ var app = app || {};
         React.render(<AppComponent todos={app.todos} />, document.getElementById("todoapp"));
     }
   });    
-                        
-  
-})(jQuery);
+
+})();
