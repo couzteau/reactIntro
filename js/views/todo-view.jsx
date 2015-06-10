@@ -9,7 +9,7 @@ var app = app || {};
   app.ItemComponent = React.createClass({
     // Toggle the `"completed"` state of the model.
     toggleCompleted: function () {
-      this.model.toggle();
+      this.props.todo.toggle();
     },
     
     getInitialState: function () {
